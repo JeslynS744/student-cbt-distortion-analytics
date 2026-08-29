@@ -134,10 +134,10 @@ print("\nCluster Summary:")
 print(cluster_summary)
 
 pair_plot_features = ["Black & White Thinking", "Anxiety", "Depression", "Cluster"]
-sns.pairplot(df[pair_plot_features], hue="Cluster", palette="viridis")
+pp = sns.pairplot(df[pair_plot_features], hue="Cluster", palette="viridis")
 plt.suptitle("Pair Plot of Clusters with Select Features", y=1.02)
 plt.savefig(os.path.join(output_dir, "cluster_pair_plot.png"), bbox_inches='tight')
-plt.close()
+plt.close('all')
 
 print("\nDataFrame with Cluster Assignments:")
 print(df[['age', 'gender', 'Course_Grouped', 'Cluster']].head())

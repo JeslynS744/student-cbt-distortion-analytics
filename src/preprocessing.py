@@ -46,20 +46,20 @@ def standardize_text(text):
         return text
     return text
 
-for col in df.select_dtypes(include=[object]).columns:
+for col in df.select_dtypes(include=['object', 'string']).columns:
     df[col] = df[col].apply(standardize_text)
 
 for col in df.columns:
-    if df[col].dtype == 'object':
-        mode = df[col].mode()
-        fill_value = mode[0] if not mode.empty else 'Missing'
-        df[col] = df[col].fillna(fill_value)
-    else:
+    if pd.api.types.is_numeric_dtype(df[col]):
         if df[col].notna().sum() > 0:
             median = df[col].median()
             df[col] = df[col].fillna(median)
         else:
             df[col] = df[col].fillna(0)
+    else:
+        mode = df[col].mode()
+        fill_value = mode[0] if not mode.empty else 'Missing'
+        df[col] = df[col].fillna(fill_value)
 
 unified_mapping = {
     'never': 0, 'occasionally': 1, 'sometimes': 2, 'often': 3, 'always': 4,
