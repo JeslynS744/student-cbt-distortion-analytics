@@ -147,35 +147,6 @@ Average observed scores across all survey respondents (0–4 scale):
 
 ---
 
-## 🚀 Installation & Usage
-
-### 1. Clone the Repository & Install Dependencies
-```bash
-git clone https://github.com/<your-username>/student-cognitive-distortion-analytics.git
-cd student-cognitive-distortion-analytics
-pip install -r requirements.txt
-```
-
-### 2. Run Data Preprocessing
-```bash
-python src/preprocessing.py
-```
-*Cleans survey text, handles missing entries, encodes Likert metrics, and outputs `data/processed/original_preprocessed_student_mental_health_data.csv`.*
-
-### 3. Run K-Means Clustering & Visualizations
-```bash
-python src/k_means.py
-```
-*Performs silhouette analysis, determines clusters, creates heatmaps/pair plots, and outputs `data/processed/original_clustered_student_mental_health_data.csv`.*
-
-### 4. Run Model Training & Evaluation
-```bash
-python src/reg_models.py
-```
-*Trains and benchmarks ML classifiers, creates confusion matrices, and writes results to `results/final_conclusion.txt`.*
-
----
-
 ## 💡 Key Insights & Recommendations
 1. **Targeted CBT Restructuring:** Since *Black-and-White Thinking* and *Personalization* are the primary drivers of psychological distress in high-risk students, mental health programs should emphasize thought reframing exercises and cognitive restructuring worksheets.
 2. **Proactive Campus Screening:** Automated screening using machine learning models (e.g., XGBoost) can assist student counseling centers in identifying students needing timely support before symptoms escalate.
