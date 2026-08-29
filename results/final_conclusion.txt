@@ -1,0 +1,10 @@
+Black & White Thinking    1.915292
+Personalization           1.840484
+Should Statements         1.783278
+Catastrophizing           1.727173
+Overgeneralization        1.671067
+
+Most observed distortion: Black & White Thinking (avg score: 1.92)
+ Cluster  Anxiety  Depression     Primary_Distortion
+     0.0 3.014493    2.765217 Black & White Thinking
+     1.0 2.070922    2.053191 Black & White Thinking
